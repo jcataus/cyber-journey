@@ -15,7 +15,7 @@
 # 04/10/2022    Fixed bug in check_char_set function. used == instead of = to assign variable
 #
 # 
-from curses.ascii import isupper
+#from curses.ascii import isupper
 from functools import total_ordering
 from itertools import count
 import re
@@ -193,27 +193,27 @@ def main():
     print("")
     key_sp, ent_score = get_key(password)
     print ("Entropy score              : ",ent_score)
-    if ent_score < 25:
+    if ent_score < 28:
         print ("### This is a VERY WEAK PASSWORD. You should be ashamed ###")
         print ("")
         print ("Passwords with an entropy score less that 25 can be easily hacked by brute force or dictionary attack ")
         advice()
-    if ent_score > 24 and ent_score < 50:
+    if ent_score > 27 and ent_score < 35:
         print ("### Your Password is WEAK. You can do better ###")
         print ("")
         print ("Passwords with an entropy score between 25 and 50 are considered weak and can be easily hacked by brute force or dictionary attack")
         advice()
-    if ent_score > 49 and ent_score < 75:
+    if ent_score > 34 and ent_score < 60:
         print ("### Your password is just OK. You can do better ###")
         print ("")
         print ("Passwords with an entropy score between 49 and 75 are considered OK.You are still at risk of being hacked by brute force or dictionary attacks")
         advice()
-    if ent_score > 74 and ent_score < 100:
+    if ent_score > 59 and ent_score < 127:
         print ("### This is a very strong password. Good work. ###")
         print ("")
         print ("Passwords with an entropy score between 50 and 00 are very strong and will be very difficult to hack")
         advice()
-    if ent_score >  100:
+    if ent_score >  127:
         print ("### This is a an excellent password. Well done. ###")
         print ("")
         print ("Passwords with an entropy score greater than 100 are extremely strong and will be extremely difficult to hack")
